@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 import urllib.request as ur
 import urllib.error as ue
 
@@ -63,8 +65,13 @@ def get_cf_ac_num() :
     return get_ac_num(
         url="https://codeforces.com/profile/" + username,
         start_label="<div class=\"_UserActivityFrame_counterValue\">",
-        end_label="problems</div>"
-    )
+        end_label="problems</div>")
+
+def get_poj_ac_num():
+    username = input(u"POJ 用户名：")
+    return get_ac_num(
+        url="http://poj.org/userstatus?user_id=" + username,
+        start_label="<a href=status?result=0&user_id=" + username + ">")
 
 
 def main() :
