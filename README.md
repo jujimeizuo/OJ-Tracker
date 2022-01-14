@@ -8,4 +8,6 @@
 
 ```shell
 git clone https://github.com/jujimeizuo/OJ-Tracker.git
+
+python3 oj-tracker.py
 ```
