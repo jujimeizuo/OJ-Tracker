@@ -85,7 +85,7 @@ def get_nowcoder_ac_num() :
     return get_ac_num(
         url="https://ac.nowcoder.com/acm/contest/profile/" + username + "/practice-coding",
         start_label="<div class=\"state-num\">",
-        end_label="</div><span><span>\xe9\xa2\x98\xe5\xb7\xb2\xe9\x80\x9a"
+        end_label="</div>"
     )
 
 def get_nowcoder_ac_rank() :
