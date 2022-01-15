@@ -73,12 +73,27 @@ def get_poj_ac_num():
         url="http://poj.org/userstatus?user_id=" + username,
         start_label="<a href=status?result=0&user_id=" + username + ">")
 
+# def get_luogu_ac_num() :
+#     username = input(u"Luogu 用户编号：")
+#     return get_ac_num(
+#         url="https://www.luogu.com.cn/user/" + username,
+#         start_label="<span data-v-d481ae34="" class=\"value\">",
+#         end_label="</")
+
+def get_nowcoder_ac_num() :
+    username = input(u"nowcoder 用户编号：")
+    return get_ac_num(
+        url="https://ac.nowcoder.com/acm/contest/profile/" + username + "/practice-coding",
+        start_label="<div class=\"state-num\">",
+        end_label="</div>"
+    )
 
 def main() :
     ac_cf = get_cf_ac_num()
-
-    ac_cnt = 0
-    ac_cnt += ac_cf
+    ac_poj = get_poj_ac_num()
+    ac_nk = get_nowcoder_ac_num()
+    # ac_luogu = get_luogu_ac_num()
+    ac_cnt = ac_cf + ac_poj + ac_nk
     print(u"总 AC 数：%d" % ac_cnt)
     jud = input(u"是否查询Rating?(y/n):")
     if jud == 'y':
