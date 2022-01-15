@@ -85,13 +85,22 @@ def get_nowcoder_ac_num() :
     return get_ac_num(
         url="https://ac.nowcoder.com/acm/contest/profile/" + username + "/practice-coding",
         start_label="<div class=\"state-num\">",
-        end_label="</div>"
+        end_label="</div><span><span>\xe9\xa2\x98\xe5\xb7\xb2\xe9\x80\x9a"
+    )
+
+def get_nowcoder_ac_rank() :
+    username = input(u"nowcoder 用户编号：")
+    return get_ac_num(
+        url="https://ac.nowcoder.com/acm/contest/profile/" + username + "/practice-coding",
+        start_label="<a href=\"javascript:void(0);\" class=\"state-num rate-score4\">",
+        end_label="</a>"
     )
 
 def main() :
+    ac_nk = get_nowcoder_ac_num()
     ac_cf = get_cf_ac_num()
     ac_poj = get_poj_ac_num()
-    ac_nk = get_nowcoder_ac_num()
+
     # ac_luogu = get_luogu_ac_num()
     ac_cnt = ac_cf + ac_poj + ac_nk
     print(u"总 AC 数：%d" % ac_cnt)
