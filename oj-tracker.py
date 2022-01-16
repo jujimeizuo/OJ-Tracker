@@ -51,7 +51,6 @@ def get_cf_rank():
         start_label="<span style=\"font-weight:bold;\" class=\"user-",
         end_label="</")
 
-
 def get_cf_max():
     username = input(u"CF 用户名：")
     return get_ac_num(
