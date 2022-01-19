@@ -7,6 +7,12 @@
 - NowCoder
 - ZOJ
 - FZU
+- UVA
+- TJU
+- SPOJ
+- HNU
+- SGU
+- ACDREAM
 
 ```shell
 git clone https://github.com/jujimeizuo/OJ-Tracker.git

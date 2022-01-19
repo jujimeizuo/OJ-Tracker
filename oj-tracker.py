@@ -101,14 +101,71 @@ def get_fzu_ac_num():
         start_label="Total Accepted</td>",
         add=7)
 
+def get_sgu_ac_num():
+    username = input(u"SGU User ID：")
+    return get_ac_num(
+        url="http://acm.sgu.ru/teaminfo.php?id=" + username,
+        start_label="Accepted: ")
+
+
+def get_spoj_ac_num():
+    username = input(u"SPOJ 用户名：")
+    return get_ac_num(
+        url="http://www.spoj.com/users/" + username + "/",
+        start_label="<td><b>")
+
+
+def get_tju_ac_num():
+    username = input(u"TJU 用户名：")
+    return get_ac_num(
+        url="http://acm.tju.edu.cn/toj/user_" + username + ".html",
+        start_label="Total Solved:</font> ",
+        end_label="&")
+
+
+def get_hnu_ac_num():
+    username = input(u"HNU 用户名：")
+    return get_ac_num(
+        url="http://acm.hnu.cn/online/?action=user&type=status&id=" + username,
+        start_label="Accepts : <a href=\"./?action=status&userid=" + username + "&judgeresult=0\">")
+
+
+def get_acdream_ac_num():
+    username = input(u"ACdream 用户名：")
+    return get_ac_num(
+        url="http://acdream.info/user/" + username,
+        start_label="Solved: <span class=\"user user-green\">")
+
+
+def get_uva_ac_num():
+    username = input(u"UVa User ID（uHunt URL 最后的那个数字）：")
+    return get_ac_num(
+        url="http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_authorstats&userid=" + username,
+        start_label="<td width=\"20%\" align=\"center\"><h1 style=\"margin-top:-20px;margin-bottom:-5px;\">",
+        loop=3)
+
+
+def get_uvalive_ac_num():
+    username = input(u"UVALive User ID（获取方法见 http://www.ahmed-aly.com/HowToGetLAUserID.jsp）：")
+    return get_ac_num(
+        url="https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_authorstats&userid=" + username,
+        start_label="<td width=\"20%\" align=\"center\"><h1 style=\"margin-top:-20px;margin-bottom:-5px;\">",
+        loop=3)
+
 def main() :
     ac_nk = get_nowcoder_ac_num()
     ac_cf = get_cf_ac_num()
     ac_poj = get_poj_ac_num()
     ac_zoj = get_zoj_ac_num()
     ac_fzu = get_fzu_ac_num()
+    ac_uva = get_uvalive_ac_num()
+    ac_tju = get_tju_ac_num()
+    ac_acdream = get_acdream_ac_num()
+    ac_spoj = get_spoj_ac_num()
+    ac_hnu = get_hnu_ac_num()
+    ac_sgu = get_sgu_ac_num()
     # ac_luogu = get_luogu_ac_num()
-    ac_cnt = ac_cf + ac_poj + ac_nk + ac_zoj + ac_fzu
+    ac_cnt = ac_cf + ac_poj + ac_nk + ac_zoj + ac_fzu + ac_uva + ac_tju + ac_acdream + ac_spoj + ac_hnu + ac_sgu
     print(u"总 AC 数：%d" % ac_cnt)
     jud = input(u"是否查询Rating?(y/n):")
     if jud == 'y':
