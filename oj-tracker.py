@@ -87,13 +87,13 @@ def get_nowcoder_ac_num() :
         end_label="</div>"
     )
 
-def get_nowcoder_ac_rank() :
-    username = input(u"nowcoder 用户编号：")
+def get_zoj_ac_num():
+    username = input(u"ZOJ User ID（User Status 页面 URL 最后的那个数字）：")
     return get_ac_num(
-        url="https://ac.nowcoder.com/acm/contest/profile/" + username + "/practice-coding",
-        start_label="<a href=\"javascript:void(0);\" class=\"state-num rate-score4\">",
-        end_label="</a>"
-    )
+        url="http://acm.zju.edu.cn/onlinejudge/showUserStatus.do?userId=" + username,
+        start_label="AC Ratio:</font> <font color=\"red\" size=\"4\">",
+        end_label="/")
+
 
 def main() :
     ac_nk = get_nowcoder_ac_num()
