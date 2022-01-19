@@ -5,6 +5,7 @@
 - Codeforces
 - POJ
 - NowCoder
+- ZOJ
 
 ```shell
 git clone https://github.com/jujimeizuo/OJ-Tracker.git
