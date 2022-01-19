@@ -6,6 +6,7 @@
 - POJ
 - NowCoder
 - ZOJ
+- FZU
 
 ```shell
 git clone https://github.com/jujimeizuo/OJ-Tracker.git

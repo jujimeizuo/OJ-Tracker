@@ -94,14 +94,21 @@ def get_zoj_ac_num():
         start_label="AC Ratio:</font> <font color=\"red\" size=\"4\">",
         end_label="/")
 
+def get_fzu_ac_num():
+    username = input(u"FZU 用户名：")
+    return get_ac_num(
+        url="http://acm.fzu.edu.cn/user.php?uname=" + username,
+        start_label="Total Accepted</td>",
+        add=7)
 
 def main() :
     ac_nk = get_nowcoder_ac_num()
     ac_cf = get_cf_ac_num()
     ac_poj = get_poj_ac_num()
-
+    ac_zoj = get_zoj_ac_num()
+    ac_fzu = get_fzu_ac_num()
     # ac_luogu = get_luogu_ac_num()
-    ac_cnt = ac_cf + ac_poj + ac_nk
+    ac_cnt = ac_cf + ac_poj + ac_nk + ac_zoj + ac_fzu
     print(u"总 AC 数：%d" % ac_cnt)
     jud = input(u"是否查询Rating?(y/n):")
     if jud == 'y':
